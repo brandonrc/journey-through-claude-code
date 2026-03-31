@@ -29,3 +29,28 @@ body {
   background-color: var(--color-terminal-green);
   color: var(--color-bg);
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.font-mono ::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.font-mono ::-webkit-scrollbar-track {
+  background: var(--color-bg-elevated);
+}
+
+.font-mono ::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
