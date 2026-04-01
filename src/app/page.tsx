@@ -2,6 +2,7 @@ import { GridBackground } from "@/components/shared/GridBackground";
 import { Hero } from "@/components/landing/Hero";
 import { JourneyCard } from "@/components/landing/JourneyCard";
 import { FadeIn } from "@/components/shared/FadeIn";
+import { CountUp } from "@/components/landing/CountUp";
 
 export default function Home() {
   return (
@@ -38,6 +39,34 @@ export default function Home() {
             />
           </FadeIn>
         </div>
+        <FadeIn delay={0.6}>
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="text-3xl md:text-4xl font-bold font-mono text-terminal-green">
+                <CountUp end={1884} />
+              </div>
+              <div className="text-sm text-text-muted mt-1">Files</div>
+            </div>
+            <div>
+              <div className="text-3xl md:text-4xl font-bold font-mono text-terminal-green">
+                <CountUp end={512} suffix="K+" />
+              </div>
+              <div className="text-sm text-text-muted mt-1">Lines of Code</div>
+            </div>
+            <div>
+              <div className="text-3xl md:text-4xl font-bold font-mono text-terminal-green">
+                <CountUp end={42} suffix="+" />
+              </div>
+              <div className="text-sm text-text-muted mt-1">Tools</div>
+            </div>
+            <div>
+              <div className="text-3xl md:text-4xl font-bold font-mono text-terminal-green">
+                <CountUp end={95} suffix="+" />
+              </div>
+              <div className="text-sm text-text-muted mt-1">Commands</div>
+            </div>
+          </div>
+        </FadeIn>
       </div>
     </main>
   );
