@@ -17,6 +17,21 @@ export const metadata: Metadata = {
   title: "Journey Through Claude Code",
   description:
     "An interactive exploration of Claude Code's architecture — trace a prompt through every system, or zoom into each layer.",
+  metadataBase: new URL("https://brandonrc.github.io"),
+  openGraph: {
+    title: "Journey Through Claude Code",
+    description:
+      "What happens when you type a prompt into Claude Code? Trace it through every system — input capture, context assembly, the API call, tool execution, and agent swarms.",
+    url: "https://brandonrc.github.io/journey-through-claude-code/",
+    siteName: "Journey Through Claude Code",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Journey Through Claude Code",
+    description:
+      "Interactive architecture exploration of Anthropic's CLI. Follow a prompt through the pipeline or zoom into every layer.",
+  },
 };
 
 export default function RootLayout({
