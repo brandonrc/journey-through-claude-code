@@ -26,6 +26,7 @@ export const architectureNodes: ArchitectureNode[] = [
       "cli-init",
       "cli-setup",
       "cli-prefetch",
+      "dce-feature-flags",
     ],
     dataFlow: {
       inputs: ["process.argv", "environment variables", "config files"],
@@ -517,6 +518,7 @@ export const architectureNodes: ArchitectureNode[] = [
     description:
       "Language Server Protocol integration for code intelligence — go-to-definition, find references, diagnostics.",
     sourceFiles: [],
+    featureGated: true,
     dataFlow: {
       inputs: ["code locations", "queries"],
       outputs: ["definitions", "references", "diagnostics"],
@@ -593,6 +595,7 @@ export const architectureNodes: ArchitectureNode[] = [
       "JWT ensures only the paired IDE can control the session",
       "Supports permission callbacks — the IDE can approve/deny tool calls",
     ],
+    featureGated: true,
     dataFlow: {
       inputs: ["IDE messages", "CLI events"],
       outputs: ["synchronized state", "permission decisions"],
@@ -699,6 +702,20 @@ export const architectureNodes: ArchitectureNode[] = [
     dataFlow: {
       inputs: ["team config", "member prompts"],
       outputs: ["parallel results", "inter-agent messages"],
+    },
+  },
+  {
+    id: "dce-feature-flags",
+    level: 2,
+    parentId: "cli-entry",
+    title: "Dead Code Elimination",
+    description:
+      "Bun's bundler uses feature() gates to strip entire code paths at build time. Features like VOICE_MODE, PROACTIVE, COORDINATOR_MODE, and KAIROS are compiled out of external builds entirely.",
+    sourceFiles: [{ path: "src/commands.ts", snippet: snippets.featureFlags }],
+    featureGated: true,
+    dataFlow: {
+      inputs: ["bun:bundle feature flags"],
+      outputs: ["stripped binary"],
     },
   },
 ];

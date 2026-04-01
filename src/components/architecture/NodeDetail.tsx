@@ -23,6 +23,13 @@ export function NodeDetail({ node, onClose }: Props) {
           [close]
         </button>
       </div>
+      {node.featureGated && (
+        <div className="mb-4 px-3 py-2 rounded-lg border border-dashed border-terminal-amber/40 bg-terminal-amber/5">
+          <span className="text-xs font-mono text-terminal-amber">
+            Feature-gated — controlled by bun:bundle feature flags or environment variables. Not available in all builds.
+          </span>
+        </div>
+      )}
       <p className="text-text-secondary leading-relaxed mb-6">{node.description}</p>
       {node.dataFlow && (
         <div className="mb-6 p-4 rounded-lg bg-bg-surface border border-border">

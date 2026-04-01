@@ -25,6 +25,7 @@ export type ArchitectureNode = {
   sourceFiles: SourceFile[];
   interestingDetails?: string[];
   childIds?: string[];
+  featureGated?: boolean;
   dataFlow?: {
     inputs: string[];
     outputs: string[];
