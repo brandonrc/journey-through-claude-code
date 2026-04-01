@@ -13,7 +13,7 @@ const scenarios: Scenario[] = ["simple", "file-edit", "bash", "agent-swarm"];
 
 export function BranchSelector({ selectedScenario, onSelect }: Props) {
   return (
-    <div className="py-16 min-h-[50vh] flex flex-col justify-center">
+    <div id="branch-point" className="py-16 min-h-[50vh] flex flex-col justify-center">
       <h2 className="text-3xl font-bold mb-4">The Path Branches</h2>
       <p className="text-text-secondary text-lg mb-8 max-w-2xl">
         The model&apos;s response determines what happens next. Different prompts
