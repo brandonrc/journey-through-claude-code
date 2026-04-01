@@ -14,12 +14,13 @@ export function ScenarioPath({ stages, activeStage, stageOffset, setStageRef }: 
   return (
     <div>
       {stages.map((stage, i) => (
-        <StageContent
-          key={stage.id}
-          stage={stage}
-          isActive={activeStage === stageOffset + i}
-          stageRef={setStageRef(stageOffset + i)}
-        />
+        <div key={stage.id} data-stage-index={stageOffset + i}>
+          <StageContent
+            stage={stage}
+            isActive={activeStage === stageOffset + i}
+            stageRef={setStageRef(stageOffset + i)}
+          />
+        </div>
       ))}
     </div>
   );
